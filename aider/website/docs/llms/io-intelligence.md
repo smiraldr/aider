@@ -27,7 +27,7 @@ First, install aider:
 ```bash
 # macOS/Linux
 export OPENAI_API_BASE=https://api.intelligence.io.solutions/api/v1
-export OPENAI_API_KEY=***
+export OPENAI_API_KEY=<key>
 
 # Windows (PowerShell)
 setx OPENAI_API_BASE https://api.intelligence.io.solutions/api/v1
@@ -84,14 +84,18 @@ weak-model:      openai/deepseek-ai/DeepSeek-V4.1-Flash
 show-model-warnings: false
 ```
 
+Values set in `~/.aider.conf.yml` take precedence over the
+environment variables shown above.
+
 ---
 
 ## FAQ
 
 * Calls made through aider are billed through your io.net account.
-* Aider's default edit formats (`diff`, `whole`) are plain text and work
-  with any chat model. The opt-in function-calling edit formats
-  (`whole-func`, `diff-func`) additionally rely on tool calls.
+* Aider's default edit formats (`diff`, `whole`) are plain text — they
+  work with any capable chat model and need no tool-calling support
+  from the endpoint. (This version of aider does not expose
+  function-calling edit formats.)
 * See the [model warnings](warnings.html)
   section for information on warnings which will occur
   when working with models that aider is not familiar with.
